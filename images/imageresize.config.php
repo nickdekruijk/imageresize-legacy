@@ -11,14 +11,6 @@
             'quality' => 70,
             'width' => 600,
             'height' => 600,
-            'blur' => 0,
-        ],
-        'gray' => [
-            'type' => 'fit',
-            'quality' => 70,
-            'grayscale' => true,
-            'width' => 600,
-            'height' => 600,
         ],
         'medium' => [
             'type' => 'fit',
@@ -34,9 +26,14 @@
         ],
         'blur' => [
             'type' => 'fit',
-            'blur' => 10,
-            'quality' => 70,
-            'width' => 1200,
-            'height' => 1200,
+            'blur' => 30,
+            'width' => 300,
+            'height' => 200,
+        ],
+        'gray' => [
+            'type' => 'fit',
+            'grayscale' => true,
+            'width' => 300,
+            'height' => 200,
         ],
     ];

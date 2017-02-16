@@ -88,6 +88,10 @@
 		for ($x=1; $x<=$template['blur']; $x++)
 		   imagefilter($image_p, IMG_FILTER_GAUSSIAN_BLUR);
    	}
+    # Add grayscale filter if needed
+	if (isset($template['grayscale']) && $template['grayscale'])
+        imagefilter($image_p, IMG_FILTER_GRAYSCALE);
+
 
 	if ($type=='image/gif')
 		imagegif($image_p, $target) or error500('Write error'); 
