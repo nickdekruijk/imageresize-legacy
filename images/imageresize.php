@@ -16,10 +16,14 @@
 	ini_set('memory_limit','128M');
     
     # Clear all resized images for the template if any
-	if (isset($_GET['clear']) && isset($templates[$_GET['clear']]) && file_exists($_GET['clear']) && is_dir($_GET['clear'])) {
-		deleteDir($_GET['clear']);
-		die;
-	}
+	if (isset($_GET['clear'])) {
+	    if ($_GET['clear']=='all')
+    	    foreach($templates as $name=>$template)
+    	        deleteDir($name);
+        elseif (isset($templates[$_GET['clear']]))
+    		deleteDir($_GET['clear']);
+        die('Cleared');
+    }
 
     # Parse the image URI and compare to this script URI to find the base folder
     $uri_parts2 = $uri_parts = parse_uri($_SERVER['REQUEST_URI']);
@@ -154,6 +158,7 @@
 
 	function deleteDir($dir) 
 	{
+    	if (!file_exists($dir) || !is_dir($dir)) return false;
 		$h=opendir($dir);
 		while($f=readdir($h)) {
 			if ($f[0]!='.')
