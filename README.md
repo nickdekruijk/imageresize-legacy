@@ -9,3 +9,17 @@ You have a /images/pictures/beach.jpg image and you have setup a 'thumbnail' tem
 
 ## Drawbacks
 There is however one disadvantage: if the original image is edited or removed the resized file will still remain the same since refering to it doesn't trigger the imageresize.php script. You will have to manually delete it or call imageresize.php?clear=thumbnail directly to delete the entire cache for that template
+
+## imageresize.config.php options
+```php
+<?php
+    $templates = [
+        'thumbnail' => [        # Template name, used for folder name
+            'type' => 'crop',   # Either fit,crop
+            'width' => 100,     # image width (or maximum with type 'fit')
+            'height' => 100,    # image height (or maximum with type 'fit')
+            'quality' => 70,    # Optional, jpeg quality %, default = 80
+            'blur' => 10,       # Optional, add blur filter, value = strength
+            'grayscale' = true, # Optional, make the resized image black and white
+        ],
+    ];
