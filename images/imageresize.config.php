@@ -1,4 +1,5 @@
 <?php
+    $targetFolder = 'resized';  # Folder for all resized, add this and the name of the template to the request url 
     $templates = [
         'thumbnail' => [
             'type' => 'crop',  # fit,crop

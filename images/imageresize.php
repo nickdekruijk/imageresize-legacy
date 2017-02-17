@@ -37,6 +37,11 @@
             
     # Set target, template and original variables
     $target = implode('/', $uri_parts);
+
+    # Check if first folder part matches the targetFolder config
+    if ($uri_parts[0]==$targetFolder)
+        array_shift($uri_parts);
+
     if (!isset($templates[$uri_parts[0]])) 
         error404('Template not found');
     $template = $templates[$uri_parts[0]];
