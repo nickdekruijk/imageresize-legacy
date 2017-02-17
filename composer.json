@@ -1,0 +1,17 @@
+{
+    "name": "nickdekruijk/imageresize",
+    "description": "A simple, yet efficient solution for image resizing and caching with php and htaccess.",
+    "license": "MIT",
+	"keywords": [
+		"image",
+		"resize",
+		"php"
+	],
+    "authors": [
+        {
+            "name": "Nick de Kruijk",
+            "email": "git@nickdekruijk.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+}
