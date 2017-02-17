@@ -88,15 +88,15 @@
 	makepath($target);
 
     # Add blur filter if needed
-	if (isset($template['blur']) && $template['blur']>0) {
+	if (isset($template['blur']) && $template['blur']>0)
 		for ($x=1; $x<=$template['blur']; $x++)
 		   imagefilter($image_p, IMG_FILTER_GAUSSIAN_BLUR);
-   	}
+
     # Add grayscale filter if needed
 	if (isset($template['grayscale']) && $template['grayscale'])
         imagefilter($image_p, IMG_FILTER_GRAYSCALE);
 
-
+    # Save the resized image
 	if ($type=='image/gif')
 		imagegif($image_p, $target) or error500('Write error'); 
 	elseif ($type=='image/png')
@@ -104,6 +104,7 @@
 	else
 		imagejpeg($image_p, $target, isset($template['quality'])?$template['quality']:80) or error500('Write error'); 
 
+    # Redirect to the saved image
 	if (file_exists($target)) redirect($target);
 
 
