@@ -18,8 +18,11 @@
     # Clear all resized images for the template if any
 	if (isset($_GET['clear'])) {
 	    if ($_GET['clear']=='all')
-    	    foreach($templates as $name=>$template)
-    	        deleteDir($name);
+	        if (!empty($targetFolder))
+    	        deleteDir($targetFolder);
+    	    else
+        	    foreach($templates as $name=>$template)
+        	        deleteDir($name);
         elseif (isset($templates[$_GET['clear']]))
     		deleteDir($_GET['clear']);
         die('Cleared');
