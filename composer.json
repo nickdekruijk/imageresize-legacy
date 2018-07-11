@@ -1,5 +1,5 @@
 {
-    "name": "nickdekruijk/imageresize",
+    "name": "nickdekruijk/imageresize-legacy",
     "description": "A simple, yet efficient solution for image resizing and caching with php and htaccess.",
     "license": "MIT",
 	"keywords": [
